@@ -9,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { FormsModule } from '@angular/forms';
 import { AddRecordComponent } from './add-record/add-record.component';
 import { RecordsComponent } from './records/records.component';
+import { DlDateTimeDateModule, DlDateTimePickerModule } from 'angular-bootstrap-datetimepicker';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,9 @@ import { RecordsComponent } from './records/records.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    DlDateTimeDateModule,  // <--- Determines the data type of the model
+    DlDateTimePickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
