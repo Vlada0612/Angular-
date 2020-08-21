@@ -1,0 +1,16 @@
+<html lang="en">
+<body>
+<div class="container">
+  <h1 class="h3 mb-3 font-weight-normal text-center">Please sign in</h1>
+  <div class="mb-3 from-label-group">
+    <input type="text" name="username" class="form-control" [(ngModel)]="username" placeholder="User Name">
+  </div>
+  <div class="mb-3 from-label-group">
+    <input type="password" class="form-control" name="password" [(ngModel)]="password" placeholder="Password">
+  </div>
+  <button (click)=checkLogin() class="btn btn-lg btn-primary btn-block form-control">
+    Sign in
+  </button>
+</div>
+</body>
+</html>
