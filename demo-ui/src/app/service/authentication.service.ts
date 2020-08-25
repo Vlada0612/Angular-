@@ -1,25 +1,27 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthenticationService {
 
-  constructor() { }
+  constructor() {
+  }
 
   authenticate(username, password) {
-    if (username === "javainuse" && password === "password") {
-      sessionStorage.setItem('username', username);
-      return true;
-    } else {
-      return false;
+    return (Object.is(username, "javainuse") && Object.is(password,"password"))
+           ? AuthenticationService.authenticateByUserName(username)
+           : false;
     }
+
+  private static authenticateByUserName(username: any) {
+    sessionStorage.setItem('username', username);
+    return true;
   }
 
   isUserLoggedIn() {
-    let user = sessionStorage.getItem('username');
-    console.log(!(user === null));
-    return !(user === null);
+    return !Object.is(sessionStorage.getItem('username'), null);
   }
 
   logOut() {

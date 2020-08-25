@@ -1,4 +1,2 @@
-rootProject.name = 'demo'
-include ':demo-service', ':demo-ui'
-include 'demo-ui'
+include 'demo-service'
 

@@ -1,0 +1,39 @@
+.uploadfilecontainer {
+  background-image: url("../../assets/img/Shaded-Clouds-2015080505.svg");
+  background-repeat: no-repeat;
+  background-size: 6.25rem;
+  background-position: center;
+  height: 12.5rem;
+  width: 80%;
+  margin: 1.25rem auto;
+  border: 0.125rem dashed #1C8ADB;
+  border-radius: 0.625rem;
+}
+
+.uploadfilecontainer:hover {
+  cursor: pointer;
+  background-color: #9ecbec !important;
+  opacity: 0.8;
+}
+
+.files-list {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0.625rem auto;
+  background: #ffffff;
+  border: dashed;
+  border-radius: 0.75rem;
+  padding: 0.3125rem;
+  color: #1c8adb;
+}
+
+.files-list .delete-file {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.files-list .delete-file img {
+  width: 1.875rem;
+}

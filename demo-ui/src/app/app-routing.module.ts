@@ -6,7 +6,8 @@ import {AuthGaurdService} from './service/auth-gaurd.service';
 import {AddRecordComponent} from './add-record/add-record.component';
 import {RecordsComponent} from './records/records.component';
 
-const routes: Routes = [{path: 'login', component: LoginComponent},
+const routes: Routes = [
+  {path: 'login', component: LoginComponent},
   {path: 'logout', component: LogoutComponent, canActivate: [AuthGaurdService]},
   {path: 'add', component: AddRecordComponent}, {path: '', component: RecordsComponent}];
 
@@ -14,5 +15,6 @@ const routes: Routes = [{path: 'login', component: LoginComponent},
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule {
 }

@@ -1,22 +1,27 @@
-<div class="content container col-md-6">
+<div class="container">
   <h1 class="h3 mb-3 font-weight-normal text-center">Add Record</h1>
   <div class="form-group">
-    <input type="text" name="title" class="form-control" placeholder="Name" minlength="1"/>
+    <input type="text" name="name" class="form-control" placeholder="Name"/>
+  </div>
+  <mat-form-field class="form-group">
+    <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <div class="form-group">
+    <input type="text" name="phone" class="form-control" ng2TelInput mask='999-999-999'/>
   </div>
   <div class="form-group">
-    <input type="text" minlength="5" name="description" class="form-control" placeholder="Date"/>
+    <textarea class="form-control" id="area" rows="12" name="text"></textarea>
   </div>
-  <div class="form-group">
-    <input minlength="1" type="text" name="number" class="form-control" placeholder="Files"/>
+  <div class="uploadfilecontainer form-control" appDnd (onFileDropped)="uploadFile($event)">
+    <input hidden type="file" (change)="uploadFile($event.target.files)">
   </div>
-  <div class="form-group">
-    <input minlength="1" type="text" name="tags" class="form-control" placeholder="Phone"/>
-  </div>
-  <div class="form-group ">
-    <div class="form-group">
-        <textarea class="form-control" id="area" rows="12" name="text" placeholder="Text">
-        </textarea>
-    </div>
+  <div class="files-list" *ngFor="let file of files;let i = index">
+    <p> {{ file }} </p>
+    <button class="delete-file" (click)="deleteAttachment(i)">
+      <img src="../../assets/img/mono-tab-remove.svg" alt="Delete">
+    </button>
   </div>
   <p class="text-right">
     <button class="btn btn-primary" type="submit">Save</button>
